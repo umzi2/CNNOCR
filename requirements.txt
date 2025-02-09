@@ -1,0 +1,9 @@
+pandas ~= 2.2.3
+numpy ~= 1.26.4
+pepeline ~= 0.3.14
+opencv-python ~= 4.11.0.86
+pyvips-binary >= 8.16.0
+pyvips >= 2.2.3
+torch ~= 2.5.1+cu121
+torchvision ~= 0.20.1+cu121
+toml ~= 0.10.2
