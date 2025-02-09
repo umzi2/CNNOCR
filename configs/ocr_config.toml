@@ -1,0 +1,27 @@
+manual_seed = 1234 # x>-1 Детерменированый режим
+
+rgb = true
+character = "0123456789"
+logger_file = "checkpoints/logger.log"
+#pretrain = "checkpoints/pretrain.pth"
+[train_load]
+    img_dir = "/run/media/umzi/H/dat/df2k/для тестов/ocr_data/imgs"
+    csv_file = "/run/media/umzi/H/dat/df2k/для тестов/ocr_data/train.csv"
+    num_workers = 16
+    batch_size = 128
+    tile_size = [128,128]
+    transforms = true
+    transforms_warmup = 4000
+
+[val_load]
+    img_dir = "/run/media/umzi/H/dat/df2k/для тестов/ocr_data/imgs"
+    csv_file = "/run/media/umzi/H/dat/df2k/для тестов/ocr_data/val.csv"
+[optim]
+    lr = 1e-3
+    betas = [0.98, 0.92, 0.99]
+    weight_decay=0.01
+[model]
+    in_ch=3
+    depths=[3, 3, 15, 3]
+    dims=[48, 96, 192, 288]
+    drop_path_rate=0.025
